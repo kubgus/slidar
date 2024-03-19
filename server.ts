@@ -2,7 +2,7 @@ const express = require("express");
 const { Server } = require("socket.io");
 const path = require("path");
 
-const port = process.env.PORT || 8080;
+const port = process.env.PORT || process.argv[4] || 8080;
 
 const app = express();
 const exs = require("http").createServer(app).listen(port, () => {
@@ -14,8 +14,8 @@ app.set("views", path.join(__dirname, "/client/views"));
 app.use(express.static(__dirname + '/client/public'));
 
 // get path of file from client
-const slides_path = process.argv[2];
-const expected_minutes = process.argv[3];
+const slides_path = process.argv[2] || "client/public/missing.md";
+const expected_minutes = process.argv[3] || 0;
 
 sio.on("connection", (io: any) => {
     console.log(`🤖 Session ${io.id} started!`);
