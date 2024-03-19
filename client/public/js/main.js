@@ -39,6 +39,10 @@ socket.on("expected_minutes", (data) => {
     }, 1000);
 });
 
+setInterval(() => {
+    document.getElementById("time").innerHTML = new Date().toLocaleTimeString();
+}, 1000);
+
 document.addEventListener("keyup", (event) => {
     if (event.key === "ArrowRight" || event.key === " " || event.key === "Enter") {
         const slide_elements = document.querySelectorAll(".slide");
@@ -56,4 +60,5 @@ document.addEventListener("keyup", (event) => {
         }
     }
     update_progress();
+    document.getElementById("index").innerHTML = current_slide + 1;
 });
