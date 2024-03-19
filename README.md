@@ -1,0 +1,3 @@
+# Slidar
+
+A presentation tool.
