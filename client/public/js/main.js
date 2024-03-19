@@ -43,21 +43,39 @@ setInterval(() => {
     document.getElementById("time").innerHTML = new Date().toLocaleTimeString();
 }, 1000);
 
+const next_slide = () => {
+    const slide_elements = document.querySelectorAll(".slide");
+    if (current_slide < slide_elements.length - 1) {
+        slide_elements[current_slide].style.opacity = 0;
+        current_slide++;
+        slide_elements[current_slide].style.opacity = 1;
+    }
+};
+
+const previous_slide = () => {
+    const slide_elements = document.querySelectorAll(".slide");
+    if (current_slide > 0) {
+        slide_elements[current_slide].style.opacity = 0;
+        current_slide--;
+        slide_elements[current_slide].style.opacity = 1;
+    }
+}
+
 document.addEventListener("keyup", (event) => {
     if (event.key === "ArrowRight" || event.key === " " || event.key === "Enter") {
-        const slide_elements = document.querySelectorAll(".slide");
-        if (current_slide < slide_elements.length - 1) {
-            slide_elements[current_slide].style.opacity = 0;
-            current_slide++;
-            slide_elements[current_slide].style.opacity = 1;
-        }
+        next_slide();
     } else if (event.key === "ArrowLeft" || event.key === "Backspace") {
-        const slide_elements = document.querySelectorAll(".slide");
-        if (current_slide > 0) {
-            slide_elements[current_slide].style.opacity = 0;
-            current_slide--;
-            slide_elements[current_slide].style.opacity = 1;
-        }
+        previous_slide();
+    }
+    update_progress();
+    document.getElementById("index").innerHTML = current_slide + 1;
+});
+
+document.addEventListener("click", (event) => {
+    if (event.clientX < window.innerWidth / 2) {
+        previous_slide();
+    } else {
+        next_slide();
     }
     update_progress();
     document.getElementById("index").innerHTML = current_slide + 1;
