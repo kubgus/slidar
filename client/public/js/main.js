@@ -12,13 +12,14 @@ update_progress();
 
 socket.on("slides", (data) => {
     console.log(data);
-    const slides = data.split("---");
+    const html = marked.parse(data);
+    const slides = html.split("<hr>");
     console.log(slides);
     slide_count = slides.length;
     slides.forEach((slide) => {
         const slideDiv = document.createElement("div");
         slideDiv.className = "slide";
-        slideDiv.innerHTML = marked.parse(slide);
+        slideDiv.innerHTML = slide;
         document.getElementById("presentation").appendChild(slideDiv);
     });
     hljs.highlightAll();

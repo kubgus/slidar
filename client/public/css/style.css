@@ -1,5 +1,5 @@
 :root {
-    --primary: #79ff0b;
+    --primary: #356ac6;
     --background: #1a1a1a;
     --text: #f6f6f6;
 }
@@ -12,10 +12,15 @@
     font-family: 'Roboto', sans-serif;
 }
 
+::-webkit-scrollbar {
+    width: 0px;
+    height: 0px;
+}
+
 html,
 body {
     height: 100%;
-    overflow: hidden;
+    overflow-x: hidden;
 
     display: flex;
     justify-content: center;
@@ -32,12 +37,55 @@ h1 {
     font-size: 3rem;
 }
 
+h2 {
+    font-size: 2.5rem;
+}
+
+h3 {
+    font-size: 2rem;
+}
+
+h4 {
+    font-size: 1.5rem;
+}
+
+h5 {
+    font-size: 1.25rem;
+}
+
+h6 {
+    font-size: 1rem;
+}
+
 p, li {
     font-size: 1.5rem;
 }
 
-ul {
+ul, ol {
     padding-left: 2rem;
+}
+
+table {
+    width: 100%;
+}
+
+thead {
+    font-size: 1.5rem;
+    text-align: left;
+}
+
+tbody {
+    font-size: 1.5rem;
+    text-align: left;
+}
+
+blockquote {
+    font-size: 1.5rem;
+    padding: 1rem 2rem;
+    margin: 1rem 0;
+    border-left: 5px solid #777;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 0.5rem;
 }
 
 code {
@@ -46,7 +94,11 @@ code {
     font-size: 1.5rem;
     padding: 1rem 1.5rem;
     margin: 1rem 0;
-    border-radius: 0.2rem;
+    border-radius: 0.5rem;
+}
+
+img {
+    border-radius: 0.5rem;
 }
 
 a {
@@ -77,32 +129,32 @@ span {
 }
 
 #time {
-    position: absolute;
+    position: fixed;
     bottom: 20px;
     left: 10px;
     z-index: 1;
 }
 
 #index {
-    position: absolute;
+    position: fixed;
     bottom: 20px;
     right: 10px;
     z-index: 1;
 }
 
 #progress {
-    position: absolute;
+    position: fixed;
     bottom: 5px;
     left: 0;
     width: 0;
     height: 5px;
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color: rgb(175, 175, 175);
     z-index: 1;
     transition: width 0.5s ease;
 }
 
 #timeline {
-    position: absolute;
+    position: fixed;
     bottom: 0;
     left: 0;
     width: 0;
