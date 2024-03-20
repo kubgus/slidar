@@ -130,21 +130,21 @@ span {
 
 #time {
     position: fixed;
-    bottom: 18px;
+    bottom: 20px;
     left: 10px;
     z-index: 1;
 }
 
 #index {
     position: fixed;
-    bottom: 18px;
+    bottom: 20px;
     right: 10px;
     z-index: 1;
 }
 
 #progress {
     position: fixed;
-    bottom: 9px;
+    bottom: 12px;
     left: 0;
     width: 0;
     height: 3px;
@@ -156,7 +156,7 @@ span {
 
 #timeline {
     position: fixed;
-    bottom: 3px;
+    bottom: 6px;
     left: 0;
     width: 0;
     height: 3px;
