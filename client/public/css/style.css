@@ -124,42 +124,44 @@ a:hover {
 }
 
 span {
-    font-size: 1.5rem;
+    font-size: 1rem;
     color: #777;
 }
 
 #time {
     position: fixed;
-    bottom: 20px;
+    bottom: 18px;
     left: 10px;
     z-index: 1;
 }
 
 #index {
     position: fixed;
-    bottom: 20px;
+    bottom: 18px;
     right: 10px;
     z-index: 1;
 }
 
 #progress {
     position: fixed;
-    bottom: 5px;
+    bottom: 9px;
     left: 0;
     width: 0;
-    height: 5px;
+    height: 3px;
     background-color: rgb(175, 175, 175);
     z-index: 1;
     transition: width 0.5s ease;
+    border-radius: 0 5px 5px 0;
 }
 
 #timeline {
     position: fixed;
-    bottom: 0;
+    bottom: 3px;
     left: 0;
     width: 0;
-    height: 5px;
+    height: 3px;
     background-color: red;
     z-index: 1;
     transition: width 1s ease;
+    border-radius: 0 5px 5px 0;
 }
