@@ -8,7 +8,6 @@ let seconds_passed = 0;
 const update_progress = () => {
     document.getElementById("progress").style.width = (current_slide / (slide_count - 1)) * 100 + "%";
 };
-update_progress();
 
 socket.on("slides", (data) => {
     console.log(data);
@@ -24,11 +23,8 @@ socket.on("slides", (data) => {
     });
     hljs.highlightAll();
     const slide_elements = document.querySelectorAll(".slide");
-    slide_elements.forEach((slide, index) => {
-        if (index !== 0) {
-            slide.style.opacity = 0;
-        }
-    });
+    slide_elements[current_slide].classList.add("active");
+    update_progress();
 });
 
 socket.on("expected_minutes", (data) => {
@@ -47,18 +43,18 @@ setInterval(() => {
 const next_slide = () => {
     const slide_elements = document.querySelectorAll(".slide");
     if (current_slide < slide_elements.length - 1) {
-        slide_elements[current_slide].style.opacity = 0;
+        slide_elements[current_slide].classList.remove("active");
         current_slide++;
-        slide_elements[current_slide].style.opacity = 1;
+        slide_elements[current_slide].classList.add("active");
     }
 };
 
 const previous_slide = () => {
     const slide_elements = document.querySelectorAll(".slide");
     if (current_slide > 0) {
-        slide_elements[current_slide].style.opacity = 0;
+        slide_elements[current_slide].classList.remove("active");
         current_slide--;
-        slide_elements[current_slide].style.opacity = 1;
+        slide_elements[current_slide].classList.add("active");
     }
 }
 
