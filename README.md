@@ -1,6 +1,15 @@
 # Slidar
 
-A presentation tool.
+A markdown presentation tool that keeps you informed.
+
+<img src="https://github.com/kubgus/slidar/assets/53797257/f5d21684-e63e-4189-b3b2-84347efd08cf" alt="Demo" width="750"/>
+
+# Features
+
+- Slide progress bar
+- Time progress bar
+- Easy markdown slide creation
+- Your own localhost server (control)
 
 # Usage
 
