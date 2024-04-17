@@ -129,7 +129,7 @@ a:hover {
     z-index: 1;
 }
 
-span {
+#time, #index {
     font-size: 1rem;
     color: #777;
 }
