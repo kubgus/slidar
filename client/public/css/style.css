@@ -168,6 +168,6 @@ a:hover {
     height: 3px;
     background-color: red;
     z-index: 1;
-    transition: width 1s ease;
+    transition: width 1s linear;
     border-radius: 0 5px 5px 0;
 }
